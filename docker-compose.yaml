@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    environment:
+    - CONFIG_NAME=default_config
+    volumes:
+      - ./bot/configs:/app/configs
+      - ./bot/db:/app/db
+    env_file:
+    - .env
