@@ -1,8 +1,10 @@
+# settings file
+# to do: this may be better as json or different format only reason is because 
 SLACK_CHANNEL = "#housing"
-SLEEP_INTERVAL = 20 * 60
-SITE = "sfbay"
-AREA = "sfc"
-CATEGORY = "apa"
+SLEEP_INTERVAL = 20 * 60 # in seconds
+SITE = "sfbay" # subdomain
+AREA = "sfc" # the city
+CATEGORY = "apa" # apartments
 FILTERS = {
     "min_price": 1600,
     "max_price": 2400,

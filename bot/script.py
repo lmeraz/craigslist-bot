@@ -23,6 +23,7 @@ SLACK_API_TOKEN = os.environ.get("SLACK_API_TOKEN")
 slack_client = slack.WebClient(token=SLACK_API_TOKEN)
 
 # configs
+# this can instead be read as file instead of module
 CONFIG_NAME = os.environ.get("CONFIG_NAME")
 CONFIG = importlib.import_module(f"configs.{CONFIG_NAME}")
 
@@ -55,9 +56,11 @@ class Listing(Base):
     has_map = Column(Boolean)
     created = Column(DateTime)
 
+    # TODO: implement this
+    def __repr__(self):
+        pass
 
 # db
-print(CONFIG.DB)
 engine = create_engine(CONFIG.DB, echo=False)
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
